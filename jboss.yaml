@@ -1,0 +1,26 @@
+#This playbook stop Weblogic on FEJ02New
+- name: Stop weblogic FEJ02New
+  hosts: jboss
+  become: yes
+  tasks:
+
+    - name: Remove EAR
+      file:
+        path: /usr/share/jboss-eap-6.4/standalone/deployments/CiaoMondo.{{item}}
+        state: absent
+      loop:
+        - ear
+        - ear.failed
+
+    - name: Remove CiaoMondo.ear.todeploy
+      file:
+        path: /usr/share/jboss-eap-6.4/standalone/deployments/CiaoMondo.ear.deployed
+        state: absent
+
+    - name: Copy file
+      copy:
+        src: CiaoMondo.ear
+        dest: /usr/share/jboss-eap-6.4/standalone/deployments/
+        owner: root
+        group: root
+        mode: 0755
