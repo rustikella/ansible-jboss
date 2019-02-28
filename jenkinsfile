@@ -7,7 +7,7 @@ stage('Clone repository') {
     }
     
     ansiblePlaybook( 
-        playbook: 'jboss.yml',
+        playbook: 'jboss.yaml',
         inventory: 'inventory' 
 //        credentialsId: 'sample-ssh-key', 
 //        extras: '-e parameter="some value"'
