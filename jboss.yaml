@@ -1,4 +1,4 @@
-#This playbook stop Weblogic on FEJ02New
+#This playbook deploys to Jboss
 - name: Deploy Jboss 6.4
   hosts: jboss
   become: yes
