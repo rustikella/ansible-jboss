@@ -21,6 +21,6 @@
       copy:
         src: CiaoMondo.ear
         dest:  /usr/share/jboss-as-7.1.1.Final/standalone/deployments/
-        owner: root
-        group: root
+        owner: jboss
+        group: jboss
         mode: 0755
