@@ -29,8 +29,8 @@
       wait_for:
         delay: 10
         path:  /usr/share/jboss-as-7.1.1.Final/standalone/deployments/CiaoMondo.ear.failed
-        state: present
-        msg: Deploy fallito
+        state: absent
+        msg: Deploy OK
        
         
                
