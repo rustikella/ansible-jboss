@@ -24,3 +24,9 @@
         owner: jboss
         group: jboss
         mode: 0755
+        
+     - name: Output message when failed
+       wait_for: 60
+        path: /usr/share/jboss-as-7.1.1.Final/standalone/deployments/CiaoMondo.ear.failed
+        state: present
+        msg: Deploy di CiaoMondo.ear fallito
