@@ -1,4 +1,4 @@
 [jboss]
-mangajboss.westeurope.cloudapp.azure.com   ansible_user=manganelli ansible_sudo_pass="Almaviva1234!"
+myjboss.westeurope.cloudapp.azure.com   ansible_user=manganelli ansible_sudo_pass="Almaviva1234!"
 [host]
 localhost ansible_connection=local
