@@ -1,0 +1,26 @@
+#This playbook deploys to Jboss
+- name: Deploy Jboss 6.4
+  hosts: jboss
+  become: yes
+  tasks:
+
+    - name: Remove WAT
+      file:
+        path: /usr/share/jboss-eap-6.4/standalone/deployments/myapp.{{item}}
+        state: absent
+      loop:
+        - ear
+        - ear.failed
+
+    - name: Remove myapp.war.todeploy
+      file:
+        path: /usr/share/jboss-eap-6.4/standalone/deployments/myapp.war.deployed
+        state: absent
+
+    - name: Copy file
+      copy:
+        src: myapp.war
+        dest: /usr/share/jboss-eap-6.4/standalone/deployments/
+        owner: root
+        group: root
+        mode: 0755
