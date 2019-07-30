@@ -1,4 +1,3 @@
-[jboss]
-myjboss.westeurope.cloudapp.azure.com   ansible_user=manganelli ansible_sudo_pass="Almaviva1234!"
-[host]
-localhost ansible_connection=local
+# file: hosts
+[windows]
+52.166.4.149
