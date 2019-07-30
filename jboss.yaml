@@ -1,27 +1,7 @@
-#This playbook deploys to Jboss
-- name: Deploy Jboss 7.1.1
-  hosts: jboss
-  become: yes
-  tasks:
-
-    - name: Remove EAR
-      file:
-        path:  /usr/share/jboss-as-7.1.1.Final/standalone/deployments/CiaoMondo.{{item}}
-        state: absent
-      loop:
-        - ear
-        - ear.failed
-
-    - name: Remove CiaoMondo.ear.todeploy
-      file:
-        path:  /usr/share/jboss-as-7.1.1.Final/standalone/deployments/CiaoMondo.ear.deployed
-        state: absent
-
-    - name: Copy file
-      copy:
-        src: CiaoMondo.ear
-        dest:  /usr/share/jboss-as-7.1.1.Final/standalone/deployments/
-        owner: root
-        group: root
-        mode: 0755
+ansible_user: manganelli
+ansible_password: Almaviva1234!
+ansible_port: 5986
+ansible_connection: winrm
+# The following is necessary for Python 2.7.9+ when using default WinRM self-signed certificates:
+ansible_winrm_server_cert_validation: ignore
      
