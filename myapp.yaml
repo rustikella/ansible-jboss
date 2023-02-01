@@ -1,6 +1,6 @@
 #This playbook deploys to Jboss
 - name: Deploy Jboss 6.4
-  hosts: jboss
+  hosts: jboss 
   become: yes
   tasks:
 
